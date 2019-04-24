@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.6.34
+    environment:
+      MYSQL_DATABASE: ems
+      MYSQL_USER: ems
+      MYSQL_PASSWORD: ems
+      MYSQL_ROOT_PASSWORD: ems
+    ports:
+      - "9906:3306"
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8081:80
+    depends_on:
+      - db
+    volumes:
+      - ./:/var/www

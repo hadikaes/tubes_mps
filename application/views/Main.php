@@ -31,18 +31,16 @@
   <div class="row">
     <div class="col-sm-6">
       <h3>Bahasa Sunda</h3>
-      <form>
+      <form method="GET" action="<?= site_url('Main/index'); ?>">
         <div class="form-group">
-          <textarea rows="10" class="form-control" id="bahasa_asal">
-          </textarea>
+          <textarea name="su" rows="10" class="form-control" id="bahasa_asal"><?= $source ?></textarea>
         </div>
-        <button type="input" class="btn btn-default">translate</button>
+        <button type="submit" class="btn btn-default">translate</button>
       </form>
     </div>
     <div class="col-sm-6">
       <h3>Bahasa Indonesia</h3>
-      <textarea rows="10" class="form-control" id="bahasa_asal" disabled="true">
-          </textarea>
+      <textarea rows="10" class="form-control" id="bahasa_asal" disabled="true"><?= $target ?></textarea>
     </div>
   </div>
   <br>
